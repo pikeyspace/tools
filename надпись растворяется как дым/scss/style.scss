@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.all-text {
+    font-size: 70px;
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 700;
+    & span {
+        animation: smoke 5s 2;
+        animation-fill-mode: forwards;
+        //=====================================================
+        // if un-coment the code letter will disappear on-by-one
+        //======================================================
+        // &:nth-child(2) {
+        //     animation-delay: 1s;
+        // }
+        // &:nth-child(3) {
+        //     animation-delay: 1.5s;
+        // }
+        // &:nth-child(4) {
+        //     animation-delay: 2s;
+        // }
+        // &:nth-child(5) {
+        //     animation-delay: 2.5s;
+        // }
+    }
+}
+
+@keyframes smoke {
+    from {
+        transform: none;
+        filter: blur(0);
+        text-shadow: none;
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        transform: scale(3) translate(-200px, -200px) rotate(-90deg);
+        filter: blur(17px);
+        text-shadow: -25px -15px 20px gray;
+        opacity: 0;
+    }
+}
